@@ -7,5 +7,5 @@ export default DS.Model.extend({
   bio: DS.attr(),
   profilePic: DS.attr(),
   dateCreated: DS.attr('date'),
-  // sequences: DS.hasMany('sequence', {async: true})
+  sequences: DS.hasMany("sequence", {async: true})
 });

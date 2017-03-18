@@ -1,6 +1,18 @@
+<h1>Yogis</h1>
 {{#each model as |yogi|}}
   <h1>Username: {{yogi.username}}</h1>
   <h2>Bio: {{yogi.bio}}</h2>
+  <h2>Yogi ID: {{yogi.id}}</h2>
+  <h2>Sequences</h2>
+  {{#each yogi.sequences as |sequence|}}
+  <h3>Sequence ID: {{sequence.id}}</h3>
+  <h3>YogiID: {{sequence.yogiID}}</h3>
+  {{/each}}
 {{/each}}
 
+<!-- <h1>Sequences</h1>
+{{#each model as |sequence|}}
+  <h2>{{sequence.id}}</h2>
+  <h3>YogiID: {{sequence.yogi}}</h3>
+{{/each}} -->
 {{outlet}}
