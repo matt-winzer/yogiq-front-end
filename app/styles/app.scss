@@ -1,2 +1,47 @@
 
 @import "ember-bootstrap/bootstrap";
+
+@mixin parallax ($url) {
+    background-image:url($url);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.main {
+  flex: 1;
+}
+
+.parallax {
+   @include parallax('/assets/images/yogiq-splash.jpg');
+   height: 94vh;
+   justify-content: center;
+   align-items: center;
+}
+
+.footer {
+  background-color: #f8f8f8;
+  height: 6vh;
+  border-top: 1px solid #e7e7e7;
+}
+
+@media screen
+  and (min-device-width: 1200px) {
+    .parallax {
+      height: 95vh;
+    }
+  }
