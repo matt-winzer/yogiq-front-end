@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('yogis');
+  this.route('yogi', {path: '/yogis/:id'});
 });
 
 export default Router;

@@ -1,6 +1,9 @@
 
 @import "ember-bootstrap/bootstrap";
 
+$border: 1px solid;
+$border-color: #e7e7e7;
+
 @mixin parallax ($url) {
     background-image:url($url);
     background-attachment: fixed;
@@ -18,8 +21,13 @@
   flex-direction: column;
 }
 
+p {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
 .navbar {
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 
 .main {
@@ -31,13 +39,60 @@
    height: 93.3vh;
    justify-content: center;
    align-items: center;
+   margin-top: -1em;
+}
+
+.border-padded {
+  border: $border;
+  border-color: $border-color;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+.jumbotron {
+  // background-image:url('/assets/images/ocean-stones.jpg');
+  @include parallax('/assets/images/ocean-stones.jpg');
+}
+
+.tab-content {
+  margin-top: 1em;
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-info-container {
+  // min-height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
 }
 
 .footer {
   background-color: #f8f8f8;
   height: 6vh;
-  border-top: 1px solid #e7e7e7;
+  border-top: $border;
+  border-color: $border-color;
 }
+
+@media screen
+  and (max-width: 992px) {
+    .profile-content {
+      flex-direction: column;
+    }
+
+    .profile-pic-container {
+      margin-bottom: 1em;
+    }
+  }
 
 @media screen
   and (min-device-width: 1500px) {

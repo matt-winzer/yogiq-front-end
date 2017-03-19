@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <h1 class="text-capitalize">Hello, {{model.username}}!</h1>
+    <!-- <p>You have created {{model.sequences.length}} sequences.</p> -->
+    <p>View your personal info, sequences, and other information below.</p>
+    <p><a class="btn btn-info btn-lg" href="#" role="button">Create Sequence</a></p>
+  </div>
+
+  {{#bs-tab class="border-padded" as |tab|}}
+    {{#tab.pane class="tab-content" title="Personal Info"}}
+      <div class="row profile-content">
+        <div class="col-md-3 profile-pic-container">
+          <img src="{{model.profilePic}}" alt="">
+        </div>
+        <div class="col-md-9 profile-info-container">
+          <p>Username: {{model.username}}</p>
+          <p>Email Address: {{model.email}}</p>
+          <p>Bio: {{model.bio}}</p>
+          <p>Member Since: {{model.dateCreated}}</p>
+        </div>
+      </div>
+    {{/tab.pane}}
+
+    {{#tab.pane title="Sequences"}}
+      {{#each model.sequences as |sequence|}}
+        <p>Sequence ID: {{sequence.id}}</p>
+        <p>Sequence Yogi: {{sequence.yogi.username}}</p>
+      {{/each}}
+    {{/tab.pane}}
+  {{/bs-tab}}
+
+</div>
+
+
+{{outlet}}
