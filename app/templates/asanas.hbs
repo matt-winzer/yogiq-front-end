@@ -1,0 +1,14 @@
+<div class="container">
+
+  <h1>Hello From Asana Route!</h1>
+
+  {{#each model as |asana|}}
+    <h2>{{asana.name}}</h2>
+    <img src="{{asana.imageURL}}" alt="">
+    <p>{{asana.description}} You will be in this pose for {{asana.time}}.</p>
+    <p>{{asana.asanaSequences}}</p>
+  {{/each}}
+
+</div>
+
+{{outlet}}
