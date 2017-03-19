@@ -1,6 +1,8 @@
 
 @import "ember-bootstrap/bootstrap";
 
+$border-color: #e7e7e7;
+
 @mixin parallax ($url) {
     background-image:url($url);
     background-attachment: fixed;
@@ -18,8 +20,13 @@
   flex-direction: column;
 }
 
+p {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
 .navbar {
-  margin-bottom: 0;
+  margin-bottom: 1em;
 }
 
 .main {
@@ -31,12 +38,30 @@
    height: 93.3vh;
    justify-content: center;
    align-items: center;
+   margin-top: -1em;
+}
+
+.border-padded {
+  border: 1px solid;
+  border-color: $border-color;
+  padding: 1em;
+  border-radius: 6px;
+}
+
+.jumbotron {
+  // background-image:url('/assets/images/ocean-stones.jpg');
+  @include parallax('/assets/images/ocean-stones.jpg');
+}
+
+.tab-content {
+  margin-top: 1em;
 }
 
 .footer {
   background-color: #f8f8f8;
   height: 6vh;
-  border-top: 1px solid #e7e7e7;
+  border-top: 1px solid;
+  border-color: $border-color;
 }
 
 @media screen
