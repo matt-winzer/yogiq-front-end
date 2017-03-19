@@ -1,6 +1,7 @@
 
 @import "ember-bootstrap/bootstrap";
 
+$border: 1px solid;
 $border-color: #e7e7e7;
 
 @mixin parallax ($url) {
@@ -42,7 +43,7 @@ p {
 }
 
 .border-padded {
-  border: 1px solid;
+  border: $border;
   border-color: $border-color;
   padding: 1em;
   border-radius: 6px;
@@ -56,11 +57,15 @@ p {
 .tab-content {
   margin-top: 1em;
 }
+.profile-pic-container {
+  display: flex;
+  justify-content: center;
+}
 
 .footer {
   background-color: #f8f8f8;
   height: 6vh;
-  border-top: 1px solid;
+  border-top: $border;
   border-color: $border-color;
 }
 

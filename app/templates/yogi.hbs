@@ -11,15 +11,20 @@
   {{#bs-tab class="border-padded" as |tab|}}
     {{#tab.pane class="tab-content" title="Personal Info"}}
       <div class="row">
+        <div class="col-md-3 profile-pic-container">
+          <img src="{{model.profilePic}}" alt="">
+        </div>
         <div class="col-md-9">
           <p>Username: {{model.username}}</p>
           <p>Email Address: {{model.email}}</p>
           <p>Bio: {{model.bio}}</p>
           <p>Member Since: {{model.dateCreated}}</p>
+          {{#each model.sequences as |sequence|}}
+            <p>Sequence ID: {{sequence.id}}</p>
+            <p>{{sequence.yogi}}</p>
+          {{/each}}
         </div>
-        <div class="col-md-3">
-          <img src="{{model.profilePic}}" alt="">
-        </div>
+
       </div>
 
     {{/tab.pane}}
