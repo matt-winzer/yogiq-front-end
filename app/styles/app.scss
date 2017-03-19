@@ -57,9 +57,23 @@ p {
 .tab-content {
   margin-top: 1em;
 }
+
+.profile-content {
+  display: flex;
+  align-items: center;
+}
+
 .profile-pic-container {
   display: flex;
   justify-content: center;
+}
+
+.profile-info-container {
+  // min-height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
 }
 
 .footer {
@@ -68,6 +82,17 @@ p {
   border-top: $border;
   border-color: $border-color;
 }
+
+@media screen
+  and (max-width: 992px) {
+    .profile-content {
+      flex-direction: column;
+    }
+
+    .profile-pic-container {
+      margin-bottom: 1em;
+    }
+  }
 
 @media screen
   and (min-device-width: 1500px) {
