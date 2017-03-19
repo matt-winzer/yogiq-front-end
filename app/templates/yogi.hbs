@@ -21,7 +21,7 @@
           <p>Member Since: {{model.dateCreated}}</p>
           {{#each model.sequences as |sequence|}}
             <p>Sequence ID: {{sequence.id}}</p>
-            <p>{{sequence.yogi}}</p>
+            <p>Sequence Yogi: {{sequence.yogi.username}}</p>
           {{/each}}
         </div>
 
