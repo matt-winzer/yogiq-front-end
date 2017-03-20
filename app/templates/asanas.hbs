@@ -1,0 +1,20 @@
+<div class="container">
+
+  <h1>Hello From Asana Route!</h1>
+
+
+  {{#bs-accordion as |acc|}}
+
+    {{#each asanasByName as |asana index|}}
+      {{#acc.item value=index title=asana.name}}
+      <img src={{asana.imageURL}} class="img-responsive center-block asana-image" alt="">
+        <p>{{asana.description}}</p>
+        <p>Duration: {{asana.time}}</p>
+      {{/acc.item}}
+    {{/each}}
+
+  {{/bs-accordion}}
+
+</div>
+
+{{outlet}}
