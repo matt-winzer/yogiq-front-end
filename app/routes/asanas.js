@@ -13,7 +13,7 @@ export default Ember.Route.extend({
 
     let asanas = model.content;
     console.log(asanas);
-    asanas.forEach(function(asana, index, array) {
+    asanas.forEach((asana, index, array) => {
       controller.set(`asana${index}`, asana);
     })
   }
