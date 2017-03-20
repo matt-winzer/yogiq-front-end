@@ -48,6 +48,7 @@ p {
   border-color: $border-color;
   padding: 1em;
   border-radius: 6px;
+  margin-bottom: 1.5em;
 }
 
 // -------------------- PROFILE CONTENT --------------------
@@ -81,8 +82,19 @@ p {
 
 // -------------------- ASANA EDUCATION --------------------
 
+.sort-options {
+  margin: 1em 0;
+  span {
+    margin-right: .5em;
+  }
+}
+
 .asana-image {
   margin-bottom: 1em;
+}
+
+.asana-stats {
+  font-weight: bold;
 }
 
 .footer {
