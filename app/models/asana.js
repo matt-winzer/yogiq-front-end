@@ -9,5 +9,5 @@ export default DS.Model.extend({
   firstTarget: DS.attr(),
   secondTarget: DS.attr(),
   thirdTarget: DS.attr(),
-  asanaSequences: DS.attr()
+  asanaSequences: DS.hasMany('asanasequence', {async: true})
 });
