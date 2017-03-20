@@ -7,7 +7,7 @@
     <p><a class="btn btn-info btn-lg" href="#" role="button">Create Sequence</a></p>
   </div>
 
-  {{#bs-tab class="border-padded" as |tab|}}
+  <!-- {{#bs-tab class="border-padded" as |tab|}}
     {{#tab.pane class="tab-content" title="Personal Info"}}
       <div class="row profile-content">
         <div class="col-md-3 profile-pic-container">
@@ -28,12 +28,12 @@
         <p>Sequence Yogi: {{sequence.yogi.username}}</p>
       {{/each}}
     {{/tab.pane}}
-  {{/bs-tab}}
+  {{/bs-tab}} -->
 
   <div class="border-padded">
     {{#bs-nav type="tabs" as |nav|}}
-        {{#nav.item}}{{#nav.link-to "yogi"}}Personal Info{{/nav.link-to}}{{/nav.item}}
-        <!-- {{#nav.item}}{{#nav.link-to "demo.tabs.other"}}Tab 2{{/nav.link-to}}{{/nav.item}} -->
+        {{#nav.item}}{{#nav.link-to "yogi.index"}}Personal Info{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "yogi.sequences" model}}Sequences{{/nav.link-to}}{{/nav.item}}
     {{/bs-nav}}
     {{outlet}}
   </div>
