@@ -1,0 +1,6 @@
+  <div class="tab-content">
+    {{#each model.sequences as |sequence|}}
+      <p>Sequence ID: {{sequence.id}}</p>
+      <p>Sequence Yogi: {{sequence.yogi.username}}</p>
+    {{/each}}
+  </div>
