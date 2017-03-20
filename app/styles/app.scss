@@ -50,6 +50,8 @@ p {
   border-radius: 6px;
 }
 
+// -------------------- PROFILE CONTENT --------------------
+
 .jumbotron {
   // background-image:url('/assets/images/ocean-stones.jpg');
   @include parallax('/assets/images/ocean-stones.jpg');
@@ -75,6 +77,12 @@ p {
   // flex-direction: column;
   // align-items: center;
   // justify-content: space-between;
+}
+
+// -------------------- ASANA EDUCATION --------------------
+
+.asana-image {
+  margin-bottom: 1em;
 }
 
 .footer {

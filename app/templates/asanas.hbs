@@ -2,13 +2,14 @@
 
   <h1>Hello From Asana Route!</h1>
 
-  
+
   {{#bs-accordion as |acc|}}
 
-    {{#each sortedAsanas as |asana index|}}
+    {{#each asanasByName as |asana index|}}
       {{#acc.item value=index title=asana.name}}
-        <p>{{alice._data.description}}</p>
-        <p>name</p>
+      <img src={{asana.imageURL}} class="img-responsive center-block asana-image" alt="">
+        <p>{{asana.description}}</p>
+        <p>Duration: {{asana.time}}</p>
       {{/acc.item}}
     {{/each}}
 
