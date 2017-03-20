@@ -48,6 +48,7 @@ p {
   border-color: $border-color;
   padding: 1em;
   border-radius: 6px;
+  margin-bottom: 1.5em;
 }
 
 // -------------------- PROFILE CONTENT --------------------
@@ -83,6 +84,9 @@ p {
 
 .sort-options {
   margin: 1em 0;
+  span {
+    margin-right: .5em;
+  }
 }
 
 .asana-image {
