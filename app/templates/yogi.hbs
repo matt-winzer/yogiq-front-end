@@ -30,7 +30,13 @@
     {{/tab.pane}}
   {{/bs-tab}}
 
+  <div class="border-padded">
+    {{#bs-nav type="tabs" as |nav|}}
+        {{#nav.item}}{{#nav.link-to "yogi"}}Personal Info{{/nav.link-to}}{{/nav.item}}
+        <!-- {{#nav.item}}{{#nav.link-to "demo.tabs.other"}}Tab 2{{/nav.link-to}}{{/nav.item}} -->
+    {{/bs-nav}}
+    {{outlet}}
+  </div>
+
+
 </div>
-
-
-{{outlet}}
