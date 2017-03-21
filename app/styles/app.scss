@@ -55,7 +55,7 @@ p {
 
 .jumbotron {
   // background-image:url('/assets/images/ocean-stones.jpg');
-  @include parallax('/assets/images/ocean-stones.jpg');
+  @include parallax('/assets/images/cairn.jpg');
 }
 
 .tab-content {
