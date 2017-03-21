@@ -2,5 +2,8 @@
     {{#each model.sequences as |sequence|}}
       <p>Sequence ID: {{sequence.id}}</p>
       <p>Sequence Yogi: {{sequence.yogi.username}}</p>
+      {{#each sequence.asanasequences as |as|}}
+        <p>asID: {{as.id}} Asana Name: {{as.asana.name}} SortOrder: {{as.sortOrder}}</p>
+      {{/each}}
     {{/each}}
   </div>
