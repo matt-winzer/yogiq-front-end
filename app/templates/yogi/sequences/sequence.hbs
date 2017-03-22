@@ -1,17 +1,26 @@
-<h1>Hello from Sequence</h1>
-
 <div class="row">
-  {{#each model.asanasequences as |as|}}
-    <div class="col-md-3 col-sm-4">
-      <div class="card center-block border-padded">
-        <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
-        <div class="card-block">
-          <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
+  <button type="button" name="button" onClick={{action 'test'}}>Edit</button>
+</div>
+
+<h1>Hello from Sequence</h1>
+<div class="row">
+
+  {{#if editMode}}
+    {{#each currentPoses as |as|}}
+      <p>{{as.asana.imageURL}}</p>
+    {{/each}}
+  {{else}}
+    {{#each model.asanasequences as |as|}}
+      <div class="col-md-3 col-sm-4">
+        <div class="card center-block border-padded">
+          <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap" onClick={{action 'test'}}>
+          <div class="card-block">
+            <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
+          </div>
         </div>
       </div>
-    </div>
-
-  {{/each}}
+    {{/each}}
+  {{/if}}
 </div>
 
 {{outlet}}
