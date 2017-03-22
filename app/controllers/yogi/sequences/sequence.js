@@ -5,6 +5,8 @@ export default Ember.Controller.extend({
   currentPoses: [],
   useSwap: false,
   sortFinishText: null,
+  sortByOrder: ['sortOrder'],
+  sortedAsanas: Ember.computed.sort('model.asanasequences', 'sortByOrder'),
 
   actions: {
     test: function() {
@@ -24,6 +26,11 @@ export default Ember.Controller.extend({
       console.log(this.get('currentPoses'));
     },
 
+    sort: function() {
+      console.log('hello');
+      this.get('model.asanasequences').sortBy('sortOrder');
+    },
+
     editPoses: function() {
       this.toggleProperty('editMode');
     },
@@ -41,9 +48,11 @@ export default Ember.Controller.extend({
         console.log('New Sort:', newSortOrder);
         console.log('Current Sort:', sortOrder);
         this.get('store').findRecord('asanasequence', asID).then(as => {
-          as.get('sortOrder');
-          as.set('sortOrder', newSortOrder);
-          as.save();
+          let so = as.get('sortOrder');
+          if (so !== newSortOrder) {
+            as.set('sortOrder', newSortOrder);
+            as.save();
+          }
         });
       })
     },
@@ -54,3 +63,5 @@ export default Ember.Controller.extend({
   }
 
 });
+
+// this.get('model.asanasequences').sortBy('sortOrder')
