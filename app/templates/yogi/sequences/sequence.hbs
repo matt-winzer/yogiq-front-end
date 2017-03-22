@@ -6,9 +6,20 @@
 <div class="row">
 
   {{#if editMode}}
-    {{#each currentPoses as |as|}}
-      <p>{{as.asana.imageURL}}</p>
-    {{/each}}
+    {{#sortable-objects sortableObjectList=currentPoses sortEndAction='sortEndAction' useSwap=useSwap}}
+      {{#each currentPoses as |as|}}
+        {{#draggable-object content=as  overrideClass='sortObject' isSortable=true}}
+          <div class="col-md-3 col-sm-4">
+            <div class="card center-block border-padded">
+              <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
+              </div>
+            </div>
+          </div>
+        {{/draggable-object}}
+      {{/each}}
+    {{/sortable-objects}}
   {{else}}
     {{#each model.asanasequences as |as|}}
       <div class="col-md-3 col-sm-4">
@@ -21,6 +32,18 @@
       </div>
     {{/each}}
   {{/if}}
+
 </div>
+
+  <!-- {{#each currentPoses as |as|}}
+    <div class="col-md-3 col-sm-4">
+      <div class="card center-block border-padded">
+        <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap" onClick={{action 'test'}}>
+        <div class="card-block">
+          <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
+        </div>
+      </div>
+    </div>
+  {{/each}} -->
 
 {{outlet}}

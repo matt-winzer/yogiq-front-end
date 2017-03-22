@@ -3,6 +3,16 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   editMode: false,
   currentPoses: [],
+  testArray: [{
+    id: 1,
+    name: 'matt'
+  },
+  { id: 2,
+    name: 'Jeremy'
+  }
+],
+  useSwap: false,
+  sortFinishText: null,
 
   actions: {
     test: function() {
@@ -20,6 +30,10 @@ export default Ember.Controller.extend({
         this.get('currentPoses').pushObject(a);
       })
       console.log(this.get('currentPoses'));
+    },
+
+    sortEndAction: function() {
+      console.log('Sort Ended', this.get('sortableObjectList'));
     }
   }
 
