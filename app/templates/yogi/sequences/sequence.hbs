@@ -1,16 +1,16 @@
-<div class="row">
-  <button type="button" name="button" onClick={{action 'test'}}>Edit</button>
+<div class="row sequence-buttons">
+  {{#link-to 'yogi.sequences'}}{{#bs-button icon="glyphicon glyphicon-arrow-left"}}Close{{/bs-button}}{{/link-to}}
+  {{#bs-button icon="glyphicon glyphicon-download" onClick=(action 'editPoses')}}Edit{{/bs-button}}
+  {{#bs-button icon="glyphicon glyphicon glyphicon-play"}}Play{{/bs-button}}
 </div>
 
-<h1>Hello from Sequence</h1>
 <div class="row">
-
   {{#if editMode}}
-    {{#sortable-objects sortableObjectList=currentPoses sortEndAction='sortEndAction' useSwap=useSwap}}
-      {{#each currentPoses as |as|}}
+    {{#sortable-objects sortableObjectList=model.asanasequences sortEndAction='sortEndAction' useSwap=useSwap}}
+      {{#each model.asanasequences as |as|}}
         {{#draggable-object content=as  overrideClass='sortObject' isSortable=true}}
           <div class="col-md-3 col-sm-4">
-            <div class="card center-block border-padded">
+            <div class="card center-block border-padded {{if editMode 'edit-border'}}">
               <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
               <div class="card-block">
                 <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
@@ -24,7 +24,7 @@
     {{#each model.asanasequences as |as|}}
       <div class="col-md-3 col-sm-4">
         <div class="card center-block border-padded">
-          <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap" onClick={{action 'test'}}>
+          <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
           </div>
@@ -32,18 +32,8 @@
       </div>
     {{/each}}
   {{/if}}
-
 </div>
 
-  <!-- {{#each currentPoses as |as|}}
-    <div class="col-md-3 col-sm-4">
-      <div class="card center-block border-padded">
-        <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap" onClick={{action 'test'}}>
-        <div class="card-block">
-          <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
-        </div>
-      </div>
-    </div>
-  {{/each}} -->
+
 
 {{outlet}}

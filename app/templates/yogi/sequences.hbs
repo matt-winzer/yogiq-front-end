@@ -1,21 +1,6 @@
   <div class="tab-content">
     {{#each model.sequences as |sequence|}}
-      {{#link-to 'yogi.sequences.sequence' sequence}}<p>Sequence ID: {{sequence.id}}</p>{{/link-to}}
+      {{#link-to 'yogi.sequences.sequence' sequence}}<p>Sequence: {{sequence.id}}</p>{{/link-to}}
       {{outlet}}
-      <!-- <div class="row">
-        {{#each sequence.asanasequences as |as|}}
-          <div class="col-md-3 col-sm-4">
-            <div class="card center-block border-padded">
-              <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
-              </div>
-            </div>
-          </div>
-
-        {{/each}}
-      </div> -->
-
-
     {{/each}}
   </div>
