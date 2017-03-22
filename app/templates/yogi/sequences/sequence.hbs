@@ -1,6 +1,10 @@
 <div class="row sequence-buttons">
   {{#link-to 'yogi.sequences'}}{{#bs-button icon="glyphicon glyphicon-arrow-left"}}Close{{/bs-button}}{{/link-to}}
-  {{#bs-button icon="glyphicon glyphicon-download" onClick=(action 'editPoses')}}Edit{{/bs-button}}
+  {{#if editMode}}
+      {{#bs-button icon="glyphicon glyphicon-ok" onClick=(action 'editPoses')}}Save{{/bs-button}}
+  {{else}}
+    {{#bs-button icon="glyphicon glyphicon-move" onClick=(action 'editPoses')}}Edit{{/bs-button}}
+  {{/if}}
   {{#bs-button icon="glyphicon glyphicon glyphicon-play"}}Play{{/bs-button}}
 </div>
 
