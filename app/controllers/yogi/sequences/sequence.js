@@ -29,7 +29,11 @@ export default Ember.Controller.extend({
     },
 
     sortEndAction: function() {
-      console.log('Sort Ended', this.get('sortableObjectList'));
+      let as = this.get('model.asanasequences');
+      as.forEach((item, index, array) => {
+        console.log(item.get('sortOrder'));
+      })
+      console.log('Sort End', this.get('model.asanasequences'), this.get('model.asanasequences').objectAt(0).get('sortOrder'));
     }
   }
 
