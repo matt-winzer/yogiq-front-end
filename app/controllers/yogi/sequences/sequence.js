@@ -41,7 +41,9 @@ export default Ember.Controller.extend({
         console.log('New Sort:', newSortOrder);
         console.log('Current Sort:', sortOrder);
         this.get('store').findRecord('asanasequence', asID).then(as => {
+          as.get('sortOrder');
           as.set('sortOrder', newSortOrder);
+          as.save();
         });
       })
     },
