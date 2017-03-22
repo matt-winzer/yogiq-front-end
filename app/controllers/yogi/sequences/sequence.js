@@ -28,12 +28,26 @@ export default Ember.Controller.extend({
       this.toggleProperty('editMode');
     },
 
-    sortEndAction: function() {
+    savePoses: function() {
+      this.toggleProperty('editMode');
       let as = this.get('model.asanasequences');
+      let currentSequence = this.get('model.id');
+      // console.log(currentSequence);
       as.forEach((item, index, array) => {
-        console.log(item.get('sortOrder'));
+        let asID = item.id;
+        let sortOrder = item.get('sortOrder');
+        let newSortOrder = index + 1;
+        console.log('AS-ID:', asID);
+        console.log('New Sort:', newSortOrder);
+        console.log('Current Sort:', sortOrder);
+        this.get('store').findRecord('asanasequence', asID).then(as => {
+          as.set('sortOrder', newSortOrder);
+        });
       })
-      console.log('Sort End', this.get('model.asanasequences'), this.get('model.asanasequences').objectAt(0).get('sortOrder'));
+    },
+
+    sortEndAction: function() {
+      console.log('Sort End', this.get('model.asanasequences'));
     }
   }
 
