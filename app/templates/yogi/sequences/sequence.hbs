@@ -1,0 +1,43 @@
+<div class="row sequence-buttons">
+  {{#link-to 'yogi.sequences'}}{{#bs-button icon="glyphicon glyphicon-arrow-left"}}Close{{/bs-button}}{{/link-to}}
+  {{#if editMode}}
+      {{#bs-button icon="glyphicon glyphicon-ok" onClick=(action 'editPoses')}}Save{{/bs-button}}
+  {{else}}
+    {{#bs-button icon="glyphicon glyphicon-move" onClick=(action 'editPoses')}}Edit{{/bs-button}}
+  {{/if}}
+  {{#bs-button icon="glyphicon glyphicon glyphicon-play"}}Play{{/bs-button}}
+</div>
+
+<div class="row">
+  {{#if editMode}}
+    {{#sortable-objects sortableObjectList=model.asanasequences sortEndAction='sortEndAction' useSwap=useSwap}}
+      {{#each model.asanasequences as |as|}}
+        {{#draggable-object content=as  overrideClass='sortObject' isSortable=true}}
+          <div class="col-md-3 col-sm-4">
+            <div class="card center-block border-padded {{if editMode 'edit-border'}}">
+              <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
+              <div class="card-block">
+                <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
+              </div>
+            </div>
+          </div>
+        {{/draggable-object}}
+      {{/each}}
+    {{/sortable-objects}}
+  {{else}}
+    {{#each model.asanasequences as |as|}}
+      <div class="col-md-3 col-sm-4">
+        <div class="card center-block border-padded">
+          <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">{{as.sortOrder}}. {{as.asana.name}}</h4>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  {{/if}}
+</div>
+
+
+
+{{outlet}}

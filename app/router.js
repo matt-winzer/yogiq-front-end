@@ -10,7 +10,9 @@ Router.map(function() {
   this.route('yogis');
   this.route('yogi', {path: '/yogis/:id'}, function() {
     this.route('index', {path: '/'});
-    this.route('sequences');
+    this.route('sequences', function() {
+      this.route('sequence', {path: '/:sequence_id'});
+    });
   });
   this.route('asanas');
 });
