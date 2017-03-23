@@ -7,10 +7,11 @@
     {{#bs-button icon="glyphicon glyphicon-move" onClick=(action 'editPoses')}}Edit{{/bs-button}}
   {{/if}}
 
-  {{#bs-button icon="glyphicon glyphicon glyphicon-play" onClick=(action "playAudio")}}Play{{/bs-button}}
-
   {{#if playingAudio}}
-  {{#bs-button icon="glyphicon glyphicon glyphicon-pause" onClick=(action "pauseAudio")}}Pause{{/bs-button}}
+    {{#bs-button icon="glyphicon glyphicon glyphicon-pause" onClick=(action "pauseAudio")}}Pause{{/bs-button}}
+    {{input type="range" value=hifi.volume class="volume-control "}}
+  {{else}}
+    {{#bs-button icon="glyphicon glyphicon glyphicon-play" onClick=(action "playAudio")}}Play{{/bs-button}}
   {{/if}}
 </div>
 
