@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  hifi: Ember.inject.service(),
   editMode: false,
   currentPoses: [],
   useSwap: false,
   sortFinishText: null,
   sortByOrder: ['sortOrder'],
   sortedAsanas: Ember.computed.sort('model.asanasequences', 'sortByOrder'),
+  audioUrl: 'https://earbyter-1.s3.amazonaws.com/hideyourkids.m4a',
 
   actions: {
     test: function() {
@@ -59,6 +61,16 @@ export default Ember.Controller.extend({
 
     sortEndAction: function() {
       console.log('Sort End', this.get('model.asanasequences'));
+    },
+
+    playAudio: function() {
+      this.get('hifi').play(this.get('audioUrl')).then(({sound}) => {
+        // sound object
+        return {sound};
+
+      }).catch(error => {
+        console.log('error from controller');
+      })
     }
   }
 

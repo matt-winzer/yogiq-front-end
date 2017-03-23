@@ -3,7 +3,6 @@
   <div class="jumbotron jumbo-asana">
     <h1 class="text-capitalize">Asanas - Yoga Poses</h1>
     <p>Click on a pose below to learn more about it.</p>
-    <!-- <p><a class="btn btn-info btn-lg" href="#" role="button">Create Sequence</a></p> -->
   </div>
 
   <div class="sort-options">
@@ -19,10 +18,7 @@
       {{#each asanasByName as |asana index|}}
         {{#acc.item value=index title=asana.name}}
         <img src={{asana.imageURL}} class="img-responsive center-block asana-image" alt="">
-        <!-- <div class="border-padded"> -->
           <p class="asana-description">{{asana.description}}</p>
-        <!-- </div> -->
-
           <p class="text-capitalize"><span class="asana-stats">Primary Target:</span> {{asana.firstTarget}}</p>
           <p class="text-capitalize"><span class="asana-stats">Secondary Target:</span> {{asana.secondTarget}}</p>
           <p class="text-capitalize"><span class="asana-stats">Duration:</span> {{asana.time}}</p>
