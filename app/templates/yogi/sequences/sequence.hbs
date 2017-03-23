@@ -8,7 +8,10 @@
   {{/if}}
 
   {{#bs-button icon="glyphicon glyphicon glyphicon-play" onClick=(action "playAudio")}}Play{{/bs-button}}
-  {{#bs-button icon="glyphicon glyphicon glyphicon-play"}}Pause{{/bs-button}}
+
+  {{#if playingAudio}}
+  {{#bs-button icon="glyphicon glyphicon glyphicon-pause" onClick=(action "pauseAudio")}}Pause{{/bs-button}}
+  {{/if}}
 </div>
 
 <div class="row">
