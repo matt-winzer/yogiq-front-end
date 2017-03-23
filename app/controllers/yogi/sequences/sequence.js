@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
   sortFinishText: null,
   sortByOrder: ['sortOrder'],
   sortedAsanas: Ember.computed.sort('model.asanasequences', 'sortByOrder'),
-  audioUrl: 'https://earbyter-1.s3.amazonaws.com/hideyourkids.m4a',
+  audioUrl: '/assets/audio/meditation-cut.mp3',
   audioUrl2: '/assets/audio/mindfulness-bell-cut.mp3',
   playingAudio: false,
   position: '',
@@ -68,7 +68,7 @@ export default Ember.Controller.extend({
 
     playAudio: function() {
       this.set('playingAudio', true);
-      this.get('hifi').play(this.get('audioUrl2')).then((sound) => {
+      this.get('hifi').play(this.get('audioUrl')).then((sound) => {
         // return {sound};
       }).catch(error => {
         console.log('error from controller');
