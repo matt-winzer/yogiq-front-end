@@ -1,10 +1,12 @@
 <div class="row sequence-buttons">
   {{#link-to 'yogi.sequences'}}{{#bs-button icon="glyphicon glyphicon-arrow-left"}}Close{{/bs-button}}{{/link-to}}
   {{#if editMode}}
-      {{#bs-button icon="glyphicon glyphicon-ok" onClick=(action 'editPoses')}}Save{{/bs-button}}
+      {{#bs-button icon="glyphicon glyphicon-ok" onClick=(action 'savePoses')}}Save{{/bs-button}}
+            {{#bs-button icon="glyphicon glyphicon-remove" onClick=(action 'editPoses')}}Cancel{{/bs-button}}
   {{else}}
     {{#bs-button icon="glyphicon glyphicon-move" onClick=(action 'editPoses')}}Edit{{/bs-button}}
   {{/if}}
+
   {{#bs-button icon="glyphicon glyphicon glyphicon-play"}}Play{{/bs-button}}
 </div>
 
@@ -25,7 +27,7 @@
       {{/each}}
     {{/sortable-objects}}
   {{else}}
-    {{#each model.asanasequences as |as|}}
+    {{#each sortedAsanas as |as|}}
       <div class="col-md-3 col-sm-4">
         <div class="card center-block border-padded">
           <img class="card-img-top img-responsive" src="{{as.asana.imageURL}}" alt="Card image cap">
