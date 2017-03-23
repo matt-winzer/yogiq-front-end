@@ -3,6 +3,8 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+## Link to yogiq-back-end: https://github.com/matt-winzer/yogiq-back-end
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
