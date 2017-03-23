@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
   sortedAsanas: Ember.computed.sort('model.asanasequences', 'sortByOrder'),
   audioUrl: '/assets/audio/meditation-cut.mp3',
   audioUrl2: '/assets/audio/mindfulness-bell-cut.mp3',
+  audioUrl3: 'https://earbyter-1.s3.amazonaws.com/meditation-cut.mp3',
   playingAudio: false,
   position: '',
 
