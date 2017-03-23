@@ -1,12 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  hifi: Ember.inject.service(),
   editMode: false,
   currentPoses: [],
   useSwap: false,
   sortFinishText: null,
   sortByOrder: ['sortOrder'],
   sortedAsanas: Ember.computed.sort('model.asanasequences', 'sortByOrder'),
+  audioUrl: 'https://earbyter-1.s3.amazonaws.com/hideyourkids.m4a',
+  audioUrl2: '/assets/audio/mindfulness-bell-cut.mp3',
+  playingAudio: false,
+  position: '',
 
   actions: {
     test: function() {
@@ -59,6 +64,28 @@ export default Ember.Controller.extend({
 
     sortEndAction: function() {
       console.log('Sort End', this.get('model.asanasequences'));
+    },
+
+    playAudio: function() {
+      this.set('playingAudio', true);
+      this.get('hifi').play(this.get('audioUrl2')).then((sound) => {
+        // return {sound};
+      }).catch(error => {
+        console.log('error from controller');
+      })
+    },
+
+    pauseAudio: function() {
+      this.set('playingAudio', false)
+      this.get('hifi').pause();
+    },
+
+    rewindAudio: function() {
+      this.get('hifi').rewind(20);
+    },
+
+    fastForward: function() {
+      this.get('hifi').fastForward(3000);
     }
   }
 
