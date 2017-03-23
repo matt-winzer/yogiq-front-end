@@ -119,6 +119,14 @@ p {
 
 // -------------------- ASANA EDUCATION --------------------
 
+.jumbo-asana {
+  @include parallax('/assets/images/water-lotus.png');
+  border: $border;
+  border-color: $border-color;
+  // padding: 1em;
+  border-radius: 6px;
+}
+
 .sort-options {
   margin: 1em 0;
   span {
