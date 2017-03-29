@@ -1,7 +1,7 @@
 import DS from 'ember-data';
+import ENV from 'yogiq-front-end/config/environment';
 
 export default DS.RESTAdapter.extend({
-  // host: "http://localhost:3000",
-  host: "https://yogiq.herokuapp.com",
+  host: ENV.host,
   namespace: 'api'
 });
